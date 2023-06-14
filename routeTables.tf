@@ -29,7 +29,7 @@ resource "aws_route_table" "my_private_route_table_2"{
     
     route {
         cidr_block = "0.0.0.0/0"
-        gateway_id = aws_nat_gateway.my_gateway2.id
+        gateway_id = aws_nat_gateway.my_gateway1.id
     }
 
     tags = {

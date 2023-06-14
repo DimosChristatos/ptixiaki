@@ -7,11 +7,11 @@ resource "aws_nat_gateway" "my_gateway1"{
     }
 }
 
-resource "aws_nat_gateway" "my_gateway2"{
-    allocation_id = aws_eip.my_eip2.id
-    subnet_id = aws_subnet.my_public_subnet_2.id
+# resource "aws_nat_gateway" "my_gateway2"{
+#     allocation_id = aws_eip.my_eip2.id
+#     subnet_id = aws_subnet.my_public_subnet_2.id
 
-    tags = {
-        Name  = "nat_gate_2"
-    }
-}
+#     tags = {
+#         Name  = "nat_gate_2"
+#     }
+# }

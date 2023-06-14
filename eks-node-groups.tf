@@ -42,13 +42,13 @@ resource "aws_eks_node_group" "node_group"{
     ]
 
     scaling_config {
-        desired_size = 1
-        max_size = 1
+        desired_size = 3
+        max_size = 3
         min_size = 0
     }
 
-    capacity_type = "ON_DEMAND"
-    instance_types = ["t3.small"]
+    capacity_type = "SPOT"
+    instance_types = ["t3a.small"]
 
     depends_on = [
         aws_iam_role_policy_attachment.nodes_amazon_eks_worker_node_policy,
