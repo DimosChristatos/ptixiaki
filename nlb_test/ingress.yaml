@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world-ingress
+spec:
+  rules:
+  - host: my-public-nlb-dns-name.example.com  # Replace with your NLB's public DNS name
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world-service  # Name of your Kubernetes Service
+            port:
+              number: 80
