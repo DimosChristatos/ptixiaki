@@ -53,7 +53,7 @@
 
 # resource "kubectl_manifest" "example-ingress" {
 #   yaml_body = <<YAML
-# apiVersion: networking.k8s.io/v1
+# apiVersion: networking.k8s.io/v1ye
 # kind: Ingress
 # metadata:
 #   name: my-ingress

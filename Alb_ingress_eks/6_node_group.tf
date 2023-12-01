@@ -34,11 +34,11 @@ resource "aws_eks_node_group" "my_nodes" {
   node_group_name = "knot-nodes"
   node_role_arn   = aws_iam_role.my_eks_node_role.arn
   subnet_ids      = [
-    aws_subnet.public_subnet_1.id,
-    aws_subnet.public_subnet_2.id
+    aws_subnet.my_private_subnet_1.id,
+    aws_subnet.my_private_subnet_2.id
   ]
-  capacity_type = "SPOT"
-  instance_types = ["t3a.small"]
+  capacity_type = "ON_DEMAND"
+  instance_types = ["t3.medium"]
 
   scaling_config {
     desired_size = 2
