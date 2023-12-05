@@ -1,3 +1,24 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+    kubectl = {
+      source = "gavinbunney/kubectl"
+    }
+  }
+}
+
+provider "kubernetes" {
+  config_context_cluster = module.eks_cluster.cluster_name
+  version                = "2.4.1"
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
 provider "kubectl" {
   # host = data.aws_eks_cluster_enpoint.cluster
   host = module.aws_eks_cluster.my_cluster.eks_cluster_endpoint
